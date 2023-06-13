@@ -1,3 +1,1 @@
-# qr_reader_app
-
-A new Flutter project.
+# Cam QR Code Scanner App
