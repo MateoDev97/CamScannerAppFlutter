@@ -26,7 +26,6 @@ class DataBaseProvider {
 
     final path = join(documentsDirectory.path, 'scansDataBase.db');
 
-    print(path);
     return await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute('''
@@ -60,16 +59,16 @@ class DataBaseProvider {
 
     return res.isEmpty
         ? []
-        : res.map((s) => ScanModel.fromJson(res.first)).toList();
+        : res.map((s) => ScanModel.fromJson(s)).toList();
   }
 
   Future<List<ScanModel>> getScansByType(String type) async {
     final db = await database;
     final res = await db!.query('Scans', where: 'type = ?', whereArgs: [type]);
-
+  
     return res.isEmpty
         ? []
-        : res.map((s) => ScanModel.fromJson(res.first)).toList();
+        : res.map((s) => ScanModel.fromJson(s)).toList();
   }
 
   Future<int> updateScan(ScanModel model) async {
