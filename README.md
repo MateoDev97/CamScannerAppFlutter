@@ -5,3 +5,5 @@
 - SQLite
 - Provider
 - GoogleMaps
+- URL Launcher
+- Barcode Scanner
